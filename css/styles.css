@@ -1,0 +1,294 @@
+@import "partials/_reset.css";
+body {
+  background-image: linear-gradient(to bottom, #8adf76, #68bf57);
+}
+
+header {
+  background-image: url(../multi/obelisco.jpg);
+  width: 100%;
+  height: 65vh;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+header ul {
+  text-align: end;
+  padding: 30px 30px 0px 0px;
+}
+header li {
+  display: inline;
+  padding: 5px;
+  margin: 5px;
+}
+header a {
+  text-decoration: none;
+  color: black;
+}
+header a:hover {
+  box-shadow: 2px 2px 5px rgb(62, 62, 240);
+  color: rgb(19, 19, 99);
+}
+header h1 {
+  text-align: center;
+  animation-duration: 2s;
+  animation-name: efecto;
+  animation-iteration-count: initial;
+}
+@keyframes efecto {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+section p {
+  font-weight: bold;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+main h2 {
+  text-align: center;
+  padding: 10px;
+}
+main .plaza {
+  display: flex;
+  justify-content: center;
+}
+main .plaza img {
+  width: 100%;
+}
+main p {
+  font-weight: bold;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+footer ul {
+  text-align: end;
+  padding: 30px 30px 0px 0px;
+}
+footer li {
+  display: inline;
+  padding: 5px;
+  margin: 5px;
+} 
+footer a {
+  text-decoration: none;
+  color: black;
+}
+footer a:hover {
+  box-shadow: 2px 2px 5px green;
+  color: rgb(11, 66, 11);
+}
+
+/*Estilo barrios*/
+.barrios .puertomadero {
+  display: grid;
+  width: 100%;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  grid-template-areas: "h3 none" "imgpm maderop";
+}
+.barrios h3 {
+  grid-area: h3;
+  padding-left: 2rem;
+}
+.barrios .maderop {
+  grid-area: maderop;
+  text-align: center;
+  align-self: center;
+  padding: 1rem;
+}
+.barrios .fotomadero {
+  grid-area: imgpm;
+  height: 90%;
+  padding-left: 2rem;
+}
+.barrios .palermo {
+  display: grid;
+  width: 100%;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  grid-template-areas: "none h3" "palermop img";
+}
+.barrios .palermo h3 {
+  grid-area: h3;
+  text-align: end;
+  padding-right: 4rem;
+}
+.barrios .palermop {
+  grid-area: palermop;
+  text-align: center;
+  align-self: center;
+  padding: 1rem;
+}
+.barrios .fotopalermo {
+  width: 90%;
+  grid-area: img;
+}
+.barrios .recoleta {
+  display: grid;
+  width: 100%;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  grid-template-areas: "h3 none" "fotorecoleta recoletap";
+}
+.barrios .fotorecoleta {
+  grid-area: fotorecoleta;
+  padding-left: 2rem;
+}
+.barrios .recoletap {
+  grid-area: recoletap;
+  text-align: center;
+  align-self: center;
+  padding: 1rem;
+}
+
+/*estilos Actividades*/
+.carouselBs .carousel-inner {
+  height: 400px;
+}
+.carouselBs .carousel-inner img {
+  height: 400px;
+}
+
+.actividades {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto;
+  grid-template-areas: "teatro cementerio jardin" "centrocultural esma caminito";
+  gap: 0.5rem;
+  margin: 1rem;
+  justify-items: center;
+  padding-top: 1rem;
+}
+.actividades .teatro, .actividades .cards, .actividades .esma, .actividades .caminito, .actividades .centrocultural, .actividades .jardin, .actividades .cementerio {
+  display: flex;
+  width: 330px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  grid-area: teatro;
+  border: solid 1px;
+  border-radius: 1rem;
+}
+.actividades .teatro.cards:hover, .actividades .cards.cards:hover, .actividades .esma:hover, .actividades .caminito:hover, .actividades .centrocultural:hover, .actividades .jardin:hover, .actividades .cementerio:hover {
+  box-shadow: 1px 1px 3px black;
+}
+.actividades .cementerio {
+  grid-area: cementerio;
+}
+.actividades .jardin {
+  grid-area: jardin;
+}
+.actividades .centrocultural {
+  grid-area: centrocultural;
+}
+.actividades .caminito {
+  grid-area: caminito;
+}
+.actividades .esma {
+  grid-area: esma;
+}
+
+/*media queries 576px*/
+@media (max-width: 576px) {
+  header {
+    height: 50vh;
+    width: 100%;
+  }
+  /*enlaces*/
+  nav ul {
+    text-align: center;
+    padding: 1rem;
+  }
+  /*estilo barrios*/
+  .barrios {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-template-areas: "puertomadero" "palermo" "recoleta";
+  }
+  .barrios .puertomadero {
+    grid-area: puertomadero;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .barrios .fotomadero {
+    height: 300px;
+    width: 90%;
+    padding: 0;
+  }
+  .barrios .maderop {
+    text-align: center;
+    align-self: center;
+    padding: 0;
+  }
+  .barrios .palermo {
+    grid-area: palermo;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  .barrios .fotopalermo {
+    width: 90%;
+    height: 300px;
+  }
+  .barrios .palermo h3 {
+    padding: 0;
+  }
+  .barrios .recoleta {
+    grid-area: recoleta;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  .barrios .fotorecoleta {
+    height: 300px;
+    width: 85%;
+    padding: 0;
+  }
+  /*estilo actividades*/
+  .carouselBs .carousel-inner {
+    height: 250px;
+  }
+  .carouselBs .carousel-inner img {
+    height: 250px;
+  }
+  .actividades {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-template-areas: "teatro" "cementerio" "jardin" "centrocultural" "caminito" "esma";
+  }
+  .actividades .teatro {
+    grid-area: teatro;
+  }
+  .actividades .cementerio {
+    grid-area: cementerio;
+  }
+  .actividades .jardin {
+    grid-area: jardin;
+  }
+  .actividades .centrocultural {
+    grid-area: centrocultural;
+  }
+  .actividades .caminito {
+    grid-area: caminito;
+  }
+  .actividades .esma {
+    grid-area: esma;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
